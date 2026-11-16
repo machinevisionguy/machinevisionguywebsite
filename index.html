@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Machine Vision Guy</title>
+  <meta name="description" content="Objective machine vision guidance for manufacturing leaders.">
+  <link rel="icon" href="assets/logo.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+  <header class="site-header"><div class="wrap">
+    <a class="brand" href="index.html"><span class="brand-mark">MVG</span><span class="brand-name">Machine Vision Guy</span></a>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="nav">&#9776;</button>
+    <nav class="nav" id="nav">
+      <a href="index.html" class="active">Insights</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="subscribe.html" class="navbtn">Subscribe</a>
+    </nav>
+  </div></header>
+
+  <section class="hero">
+    <div class="wedge"></div><div class="wedge2"></div>
+    <div class="wrap"><div class="hc">
+      <h1>Objective machine vision guidance for manufacturing leaders.</h1>
+      <a class="btn" href="#latest">Read the insights</a>
+      <a class="btn-ghost" href="about.html">About me &rarr;</a>
+    </div></div>
+  </section>
+
+  <main class="wrap">
+
+    <section class="filter" id="latest">
+      <div class="search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg>
+        <input id="search" type="search" placeholder="Search articles">
+      </div>
+      <div class="cats">
+        <button class="chip" data-filter="strategy">Vision Strategy &amp; Standards</button>
+        <button class="chip" data-filter="ai">AI</button>
+        <button class="chip" data-filter="inspection">Automated Inspection</button>
+        <button class="chip" data-filter="vgr">Vision-Guided Robotics</button>
+        <button class="chip" data-filter="traceability">Traceability</button>
+        <button class="chip" data-filter="measurement">Measurement</button>
+      </div>
+    </section>
+
+    <section class="grid">
+      <div class="card" data-category="ai,strategy,inspection">
+        <a href="articles/do-i-need-ai-machine-vision.html"><div class="card-inner">
+          <div class="ph"><img src="assets/articles/chart-benchmark.png" alt="Inspection benchmark across 1,000 parts"></div>
+          <div class="card-body">
+            <span class="pill">AI</span><span class="pill">Vision Strategy &amp; Standards</span><span class="pill">Automated Inspection</span>
+            <h3>Do I Need AI Machine Vision, or Not?</h3><span class="date">November 15, 2026</span></div>
+        </div></a>
+      </div>
+    </section>
+    <p class="empty-note" id="empty-note" style="display:none">No articles match. Clear the search or categories.</p>
+
+    <section class="news">
+      <div><h3>Subscribe for new posts</h3><p>Get new machine vision insights by email.</p></div>
+      <a class="btn" href="subscribe.html">Subscribe</a>
+    </section>
+
+  </main>
+
+  <footer class="site-footer"><div class="wrap">
+    <nav class="foot-nav"><a href="index.html">Insights</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="subscribe.html">Subscribe</a></nav>
+    <a class="foot-copy" href="about.html">&copy; 2026 Machine Vision Guy</a>
+  </div></footer>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>

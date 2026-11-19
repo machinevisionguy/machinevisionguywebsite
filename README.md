@@ -8,11 +8,14 @@ Static website for machinevisionguy.com. Plain HTML, CSS, and a little JavaScrip
 index.html        Home (site intro hero, search + category filter, article grid)
 about.html        About page
 contact.html      Contact page (email form)
+search-index.json Article list the concierge searches and cites
+concierge-worker/ Cloudflare Worker for AI answers (see its README)
 articles/         One HTML file per post
   do-i-need-ai-machine-vision.html
 assets/
   style.css       Shared styling. Brand colors are the tokens at the top (:root)
   app.js          Mobile nav, category filter, contact form
+  concierge.js    Concierge chat widget (settings at the top of the file)
   logo.svg        Logo mark (swap this file to change the logo)
   articles/       Images and charts used in posts
 ```
@@ -53,7 +56,8 @@ Submissions then arrive at machinevisionguy@gmail.com, and the visitor sees a su
 1. Copy `articles/do-i-need-ai-machine-vision.html` to a new file, for example `articles/what-is-machine-vision.html`.
 2. Change the title, meta description, the `<h1>`, the date and tags in the meta line, and the body.
 3. On `index.html`, add a card in the grid pointing to the new file, with the right `data-category` and title.
-4. Commit and push (or upload).
+4. In `search-index.json`, add an entry for the article (url, title, date, categories, description, summary, keywords). The concierge uses it to find and cite the article.
+5. Commit and push (or upload).
 
 Or send the draft to Claude and get the finished article file plus its home-page card back.
 
@@ -69,6 +73,12 @@ A card's `data-category` must match a filter button's `data-filter` on `index.ht
 | Vision-Guided Robotics (Physical AI) | vgr |
 | Traceability | traceability |
 | Measurement | measurement |
+
+## Concierge chat
+
+A chat button sits in the bottom right corner of every page. A short teaser appears once per session, 8 seconds after a visitor lands on Home, About, or an article, and never on Contact or Subscribe. The conversation follows the visitor across pages for the session.
+
+AI answers come from a Cloudflare Worker that holds the OpenAI key. Setup steps are in `concierge-worker/README.md`. Until the Worker address is set in `assets/concierge.js`, the chat answers with local article search.
 
 ## Change colors or logo
 

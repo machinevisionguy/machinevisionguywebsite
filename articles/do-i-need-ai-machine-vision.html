@@ -67,7 +67,7 @@
       <h2>The catch with AI is the deployment</h2>
       <p>The integration path for AI systems is far more back-heavy. A working machine must first produce images of production parts before the hundreds of sample parts needed to train an effective AI model can be gathered. Synthetic data can help with this problem, but at least as of 2026, virtually every synthetic data company Vista has tried has failed to improve AI model results any more than collecting additional production data would have.</p>
       <p>The effect on the timeline is significant. A traditional build follows a clean sequence. The machine is built on the system integrator floor, validated with the samples on hand, turned on in production, and groomed for roughly one week to reach a fully working solution at 99.6%. AI pathways are riskier and less straightforward. You design the machine with its cameras and confirm that it is triggering, but at factory acceptance testing you do not have a working model, because there is not sufficient part data to create a general use case AI model. All that can be validated at the factory acceptance phase is that the image acquisition system works and the images are of good quality. Once the machine reaches production, several weeks of production must be collected, after which the model is trained, validated, and debugged. Integrating a working AI system can therefore take several more weeks than a traditional system.</p>
-      <figure><img src="../assets/articles/chart-timeline.png" alt="Deployment timeline comparison between traditional vision and AI vision"><figcaption>Traditional vision is validated before it ships. AI cannot be trained until the machine is running.</figcaption></figure>
+      <figure><img src="../assets/articles/chart-timeline.png?v=3" alt="Illustrative timeline. Traditional vision is built, validated at FAT, and groomed to 99.6% in about three weeks. AI vision confirms imaging at FAT, collects weeks of production images, then trains to a first working model at about eight weeks."><figcaption>Traditional vision is validated before it ships. AI cannot be trained until the machine is running.</figcaption></figure>
       <blockquote>Traditional vision is proven before it ships. An AI model cannot be trained until a working machine is already producing parts.</blockquote>
       <p>A further disadvantage of AI inspection is that it generally requires far more images to produce the same pass and fail results a traditional system achieves on a straightforward application. This makes AI particularly challenging for new manufacturing processes, where images of the product do not yet exist and feasibility is difficult to test.</p>
 
@@ -103,5 +103,6 @@
   </div></footer>
 
   <script src="../assets/app.js"></script>
+  <script src="../assets/concierge.js"></script>
 </body>
 </html>

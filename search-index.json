@@ -3,13 +3,83 @@
   "items": [
     {
       "type": "article",
+      "url": "articles/how-do-i-get-started-with-machine-vision.html",
+      "title": "How Do I Get Started with Machine Vision?",
+      "date": "2026-11-19",
+      "categories": [
+        "strategy",
+        "inspection"
+      ],
+      "description": "Hire an experienced industrial vision engineer, pick an easy first project, define success as 99.6%, and build momentum before taking on harder applications.",
+      "summary": "Machine vision projects fail more often because of the wrong application or poorly defined success criteria than because of the technology picked. The number one recommendation is to hire an experienced industrial machine vision engineer onto the central manufacturing team, someone who has spent years deploying industrial vision such as Cognex, Keyence, or Matrox in manufacturing facilities, not lab or open source experience. Give them a small vision lab, since 85 to 90% of project success comes down to picking the right lighting. Their first assignment is an easy project that is very likely to succeed, using industrial technology the maintenance team can support, because a hard-to-maintain camera ends up in bypass or passing everything. Define success as 99.6%, with zero false passes and no more than four false failures per 1,000 parts. Prove it, share results with leadership, and build momentum, then read the solution across other plants and train others before taking on harder applications. The internal expert sets standards and vets system integrators, and at least 50% of an integrator's work should be vision focused, ideally 80% or more.",
+      "keywords": [
+        "getting started",
+        "get started",
+        "first project",
+        "where to start",
+        "hire",
+        "vision engineer",
+        "machine vision engineer",
+        "momentum",
+        "easy project",
+        "roi",
+        "maintenance",
+        "bypass",
+        "buy-in",
+        "99.6%",
+        "false failure",
+        "false pass",
+        "success criteria",
+        "vision lab",
+        "lighting",
+        "read across",
+        "system integrator",
+        "vet integrators",
+        "cognex",
+        "keyence",
+        "matrox",
+        "checklist",
+        "flywheel"
+      ]
+    },
+    {
+      "type": "article",
       "url": "articles/do-i-need-ai-machine-vision.html",
       "title": "Do I Need AI Machine Vision, or Not?",
       "date": "2026-11-15",
-      "categories": ["ai", "strategy", "inspection"],
+      "categories": [
+        "ai",
+        "strategy",
+        "inspection"
+      ],
       "description": "When AI machine vision is the right tool, when traditional rules-based vision wins, and how the deployment and standards differ.",
       "summary": "Success in automated inspection is typically benchmarked at zero false passes and four false failures per 1,000 parts (99.6% effective). Traditional rules-based vision (smart cameras or PC-based) is programmed on a handful of sample parts, validated at factory acceptance, groomed for about one week, is deterministic to maintain, and is rarely sold as a subscription. AI vision uses neural networks and supervised learning, needs hundreds to a thousand labeled images, can only validate imaging at factory acceptance, and takes several more weeks to deploy because production images must be collected first. Synthetic data has not outperformed collecting more production data. AI is the right tool for defects that cannot be described with measurable rules, where 80 to 95% effectiveness with a human in the loop is a strong result compared with 60 to 80% for manual inspection. At 90% effective, nine of ten inspection operators can be recovered. Recommendation: use traditional vision wherever it works, apply AI to hard inspections on existing lines with plenty of data, and plan for an operator in the loop for months.",
-      "keywords": ["ai", "artificial intelligence", "deep learning", "neural network", "rules-based", "traditional vision", "smart camera", "pc-based vision", "surface defect", "defect detection", "false failure", "false pass", "false reject", "99.6%", "training data", "labeled images", "synthetic data", "factory acceptance", "fat", "human in the loop", "operator", "subscription", "cost", "when to use ai"]
+      "keywords": [
+        "ai",
+        "artificial intelligence",
+        "deep learning",
+        "neural network",
+        "rules-based",
+        "traditional vision",
+        "smart camera",
+        "pc-based vision",
+        "surface defect",
+        "defect detection",
+        "false failure",
+        "false pass",
+        "false reject",
+        "99.6%",
+        "training data",
+        "labeled images",
+        "synthetic data",
+        "factory acceptance",
+        "fat",
+        "human in the loop",
+        "operator",
+        "subscription",
+        "cost",
+        "when to use ai"
+      ]
     },
     {
       "type": "page",
@@ -18,7 +88,18 @@
       "categories": [],
       "description": "Who Eric Parker is, what the site covers, and how to work with him.",
       "summary": "Machine Vision Guy is Eric Parker's independent take on industrial machine vision. Eric is Director of Sales and an Executive Board member at Vista Solutions, North America's largest machine vision integrator, with almost a decade in the industry, testing and deploying vision technology across every major platform, Keyence and Cognex included, with no allegiance to any one of them. The site covers vision strategy and standards, automated inspection, AI-based inspection, vision-guided robotics, non-contact measurement and gauging, and traceability. Visitors planning, buying, or troubleshooting a vision application can contact Eric for an unbiased second opinion.",
-      "keywords": ["about", "eric parker", "who", "vista solutions", "integrator", "second opinion", "work with", "consulting", "keyence", "cognex"]
+      "keywords": [
+        "about",
+        "eric parker",
+        "who",
+        "vista solutions",
+        "integrator",
+        "second opinion",
+        "work with",
+        "consulting",
+        "keyence",
+        "cognex"
+      ]
     }
   ]
 }

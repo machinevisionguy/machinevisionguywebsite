@@ -80,6 +80,10 @@ A chat button sits in the bottom right corner of every page. A short teaser appe
 
 AI answers come from a Cloudflare Worker that holds the OpenAI key. Setup steps are in `concierge-worker/README.md`. Until the Worker address is set in `assets/concierge.js`, the chat answers with local article search.
 
+## After changing style.css, app.js, or concierge.js
+
+Hostinger's CDN keeps copies of these files for up to 7 days. After pushing a change to one of them, flush the CDN cache: hPanel, Websites, Dashboard, Performance, CDN, Flush cache.
+
 ## Change colors or logo
 
 - Colors: edit the tokens in `:root` at the top of `assets/style.css` (the A3-mirrored palette).

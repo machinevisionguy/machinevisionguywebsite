@@ -59,7 +59,7 @@
   function el(tag, cls, html) { var n = document.createElement(tag); if (cls) n.className = cls; if (html != null) n.innerHTML = html; return n; }
   function esc(s) { return String(s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
   function paras(s) { return String(s).split(/\n{2,}/).map(function (p) { return '<p>' + esc(p.trim()).replace(/\n/g, '<br>') + '</p>'; }).join(''); }
-  var ICON_CHAT = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg>';
+  var ICON_CHAT = '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3.2c-5.1 0-9.2 3.5-9.2 7.9 0 2.3 1.1 4.3 2.9 5.8L5 21.2l4.6-2.2c.8.2 1.6.3 2.4.3 5.1 0 9.2-3.5 9.2-7.9S17.1 3.2 12 3.2z"/><circle cx="8" cy="11.2" r="1.35" fill="#4CB74D"/><circle cx="12" cy="11.2" r="1.35" fill="#4CB74D"/><circle cx="16" cy="11.2" r="1.35" fill="#4CB74D"/></svg>';
   var ICON_X = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>';
   var ICON_MIN = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14"/></svg>';
   var ICON_SEND = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
@@ -176,11 +176,11 @@
       b.appendChild(wrap);
     }
     if (m.contact === 'link') {
-      var l = el('button', 'mvgc-talk', 'Talk to Eric about your application &rarr;'); l.type = 'button';
+      var l = el('button', 'mvgc-talk', 'Talk to Machine Vision Guy about your application &rarr;'); l.type = 'button';
       b.appendChild(l);
     }
     if (m.contact === 'form') b.appendChild(contactForm(i));
-    if (m.contact === 'sent') b.appendChild(el('p', 'mvgc-ok', 'Thanks. Eric will reply by email.'));
+    if (m.contact === 'sent') b.appendChild(el('p', 'mvgc-ok', 'Thanks. Machine Vision Guy will reply by email.'));
     return b;
   }
   function render(keepScroll) {
@@ -226,7 +226,7 @@
   log.addEventListener('click', function (e) {
     var chip = e.target.closest('.chip[data-cat]');
     if (chip) { browseCategory(chip.getAttribute('data-cat')); return; }
-    if (e.target.closest('.mvgc-talk')) { push({ role: 'bot', text: 'Send Eric a note and he will reply by email.', contact: 'form' }); return; }
+    if (e.target.closest('.mvgc-talk')) { push({ role: 'bot', text: 'Send Machine Vision Guy a note and you will get a reply by email.', contact: 'form' }); return; }
     var card = e.target.closest('.mvgc-card');
     if (card && window.matchMedia('(max-width: 600px)').matches) { state.open = false; save(); }
   });
@@ -237,7 +237,7 @@
     loadIndex().then(function (items) {
       var hits = items.filter(function (it) { return (it.categories || []).indexOf(cat) !== -1; });
       if (hits.length) push({ role: 'bot', text: 'Here is what I have published on ' + label + '. You can also ask me a specific question.', cards: hits.slice(0, 4) });
-      else push({ role: 'bot', text: 'Nothing is published on ' + label + ' yet. Ask me a question and I will answer it, or send it to Eric as a topic for a future post.', contact: 'link' });
+      else push({ role: 'bot', text: 'Nothing is published on ' + label + ' yet. Ask me a question and I will answer it, or send it to Machine Vision Guy as a topic for a future post.', contact: 'link' });
     });
   }
 
@@ -267,7 +267,7 @@
           body: JSON.stringify({ messages: history(), page: location.pathname, token: token })
         });
       }).then(function (r) {
-        if (r.status === 429) return { answer: 'You have reached the question limit for now. Please try again in a few minutes, or send your question to Eric.', articles: [], contact: true };
+        if (r.status === 429) return { answer: 'You have reached the question limit for now. Please try again in a few minutes, or send your question to Machine Vision Guy.', articles: [], contact: true };
         if (!r.ok) throw new Error('http ' + r.status);
         return r.json();
       }).then(function (j) {
@@ -282,7 +282,7 @@
   function localAnswer(items, q) {
     var hits = search(items, q, 3);
     if (hits.length) return { role: 'bot', text: 'These are the closest articles I found.', cards: hits, contact: 'link' };
-    return { role: 'bot', text: 'I could not find an article on that yet. Eric can answer it directly.', contact: 'link' };
+    return { role: 'bot', text: 'I could not find an article on that yet. Machine Vision Guy can answer it directly.', contact: 'link' };
   }
 
   /* ---------- Turnstile (invisible bot check) ---------- */
@@ -318,7 +318,7 @@
     });
   }
 
-  /* ---------- Talk to Eric (Web3Forms) ---------- */
+  /* ---------- Talk to Machine Vision Guy (Web3Forms) ---------- */
   function contactForm(i) {
     var lastQ = '';
     for (var k = i - 1; k >= 0; k--) { if (state.msgs[k].role === 'user') { lastQ = state.msgs[k].text; break; } }
@@ -328,7 +328,7 @@
       '<input name="email" type="email" placeholder="Email" required autocomplete="email">' +
       '<textarea name="message" rows="3" placeholder="What are you working on?">' + esc(lastQ) + '</textarea>' +
       '<input type="checkbox" name="botcheck" class="mvgc-hp" tabindex="-1" autocomplete="off" aria-hidden="true">' +
-      '<button class="btn" type="submit">Send to Eric</button><p class="mvgc-err" hidden></p>';
+      '<button class="btn" type="submit">Send to Machine Vision Guy</button><p class="mvgc-err" hidden></p>';
     f.addEventListener('submit', function (e) {
       e.preventDefault();
       var btn = f.querySelector('button'), err = f.querySelector('.mvgc-err');
@@ -348,7 +348,7 @@
         if (!j || !j.success) throw new Error('fail');
         state.msgs[i].contact = 'sent'; save(); render();
       }).catch(function () {
-        btn.disabled = false; btn.textContent = 'Send to Eric';
+        btn.disabled = false; btn.textContent = 'Send to Machine Vision Guy';
         err.innerHTML = 'Your message did not send. Email <a href="mailto:machinevisionguy@gmail.com">machinevisionguy@gmail.com</a>.';
         err.hidden = false;
       });
